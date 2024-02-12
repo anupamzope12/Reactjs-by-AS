@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="header">HEADER</div>
+    <div id="root">NOT RENDER</div>
+    <h1 id="title">Hello everyone from Namaste React!</h1>
+    <div id="footer">FOOTER</div>
+
+</body>
+    <script 
+       crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script 
+        crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+    <script>
+        //in rect.cretaeElement take  3 arguments
+        const heading=React.createElement("h1",
+        {
+            id:"title",
+        },
+        "Namaste Everyone !")
+
+        const root=ReactDOM.createRoot(document.getElementById("root"));
+        //passing the react element inside the root
+        root.render(heading);
+    </script>
+
+</html>
