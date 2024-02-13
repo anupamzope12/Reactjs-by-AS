@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+
+<body>
+    <div><h1>Header</h1></div>
+    <div id="root">
+        <h1 id="title">Hello World from Namaste React!4554</h1>  
+    </div>
+    <div><h1>Footer</h1></div>
+    <script 
+        crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script 
+        crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+    <script>
+        const heading =React.createElement("h1",
+        {
+            id:"title",
+        },
+        " from Namaste React!???????");
+        const element = document.getElementById("root");
+        const root=ReactDOM.createRoot(element);
+        root.render(heading);
+    </script>
+</body>
+
+</html>
