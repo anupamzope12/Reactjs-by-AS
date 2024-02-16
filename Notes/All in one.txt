@@ -1,0 +1,323 @@
+									DAY 3 ASSIGNMENT
+
+Why do we need npm
+
+Because a rect app is powerd of lot of pacakages and buldlers to handle that we need some helper package so that we need npm
+
+tilde VS caret
+https://stackoverflow.com/questions/22343224/whats-the-difference-between-tilde-and-caret-in-package-json
+
+npm init
+npm install -D parcel
+
+pacakage-lock => to know what version exact using on production 
+		pacakge lock is lock the exact version what version do you have in your system
+	
+pacakage-lock .json is very impt file it lock the version.It keeps track of 
+It maints the hash of it maintains integrity
+
+npm install -D parcel==> after install ing gthe node modules is also get come which like database for parcel
+
+Should we add node modules to git repo => No 1.It is very heay file 
+2. becaues to pacakge lock.json has suffcient information so we can generate it agaain
+
+npmx=>npx means execute using the npm
+
+React is core package and ReactDOM is package that uses React for manipulating the dom
+
+I will never edit node modules and package.json packagelock.json
+
+Parcel doing HMR-Hot Module Doing
+
+to ignite our app we give entry point to our APP => npx parcel index.html
+it jus create a develpment biuld and host it on a server
+
+We should put .parcel.cache in gitignore
+Any thing which generate on server automatically can put in .parcel.cache
+
+Transitive Dependencies => We have package maanager which take the work of transitive dependencies
+
+What are ther different types of scrpit
+
+1.What is `NPM`?
+
+npm is the world's largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+
+npm consists of three distinct components:
+
+the website
+the Command Line Interface (CLI)
+the registry
+
+Use the website to discover packages, set up profiles, and manage other aspects of your npm experience. For example, you can set up organizations to manage access to public or private packages.
+
+The CLI runs from a terminal, and is how most developers interact with npm.
+
+The registry is a large public database of JavaScript software and the meta-information surrounding it.
+
+Why do we need npm
+
+Because a rect app is powered of lot of pacakages and buldlers to handle that we need some helper package so that we need npm
+
+2.What is `npx` ?
+
+	'npx' is a command-line tool that comes bundled with Node.js, starting from version 5.2.0. It stands for "Node Package Execute" and is used to execute Node.js packages.
+
+	The primary purpose of npx is to make it easy to run Node.js packages without having to install them globally or locally. When you run a command using npx, it first checks whether the package is installed locally in the node_modules/.bin directory of your current project. If it's not found locally, npx will automatically download and install the package temporarily, execute the command, and then remove the package afterward.
+
+	This means you can easily run command-line tools and executables from npm packages without worrying about polluting your global npm environment or cluttering your local project with unnecessary dependencies.
+
+
+3.What is bundlers
+
+	A bundler is a tool used in web development to bundle various assets, such as JavaScript files, CSS files, images, and more, into a single or multiple optimized files that can be served to the client's browser. Bundlers are crucial for managing dependencies, optimizing performance, and improving the development workflow. Let's take a look at three popular bundlers: Vite, webpack, and Parcel.
+
+Vite:
+	Vite is a modern web development build tool that focuses on speed and simplicity. It leverages native ES module (ESM) support in modern browsers to provide extremely fast bundling and hot module replacement (HMR) during development.
+	Unlike traditional bundlers like webpack and Parcel, Vite doesn't bundle all the code and assets into a single file during development. Instead, it serves them directly from the source, using native browser support for ESM.
+	In production, Vite still bundles and optimizes the code for performance, but it's primarily known for its incredibly fast development server and HMR capabilities.
+
+webpack:
+	Webpack is one of the most popular and versatile bundlers in the JavaScript ecosystem. It offers extensive customization options and supports a wide range of features, including code splitting, tree shaking, asset optimization, and more.
+	Webpack operates on a plugin-based architecture, allowing developers to extend its functionality through various plugins and loaders.
+	While webpack has a steeper learning curve and requires more configuration compared to Vite, it remains a powerful choice for complex projects with specific requirements.
+
+Parcel:
+	Parcel is another bundler known for its ease of use and zero-configuration setup. It aims to simplify the development process by requiring minimal setup and automatically handling various tasks like code transformation, bundling, and optimization.
+	Parcel offers out-of-the-box support for modern web features and asset types, making it suitable for rapid prototyping and smaller projects.
+	While Parcel may not offer the same level of customization and control as webpack, its simplicity and fast setup make it an attractive choice for developers who prioritize ease of use.
+
+4.What is `.parcel-cache`
+
+The .parcel-cache directory is a directory created by the Parcel bundler tool during the bundling process. It's used to store cached data and intermediate files generated during the build process.
+
+Parcel, like many other build tools, uses caching to improve build performance. When you run Parcel to build your project, it analyzes your source files, processes them, and generates the bundled output. Along the way, it may generate various intermediate files or metadata to optimize the build process.
+
+The .parcel-cache directory typically contains cached data related to dependencies, compiled assets, and other build artifacts. By storing this data locally, Parcel can avoid redundant work during subsequent builds, resulting in faster build times.
+
+It's generally safe to ignore or delete the .parcel-cache directory if you're cleaning up your project directory or trying to save space. Parcel will recreate the cache as needed during the next build. However, deleting it may result in slightly longer build times during the next build as Parcel rebuilds the cache.
+
+
+In the context of npm (Node Package Manager) or Yarn, dependencies and devDependencies are two different categories used to specify dependencies in a project's package.json file. They serve distinct purposes and are used in different scenarios:
+
+5.What is difference between `dependencies` vs `devDependencies`
+
+Dependencies:
+
+	Dependencies are the packages that are required for the application to run in production. These are the packages that your application directly depends on during runtime.
+	When someone installs your package or project, npm or Yarn will install these dependencies as well.
+	Examples of dependencies might include libraries or frameworks that your application relies on to function properly, such as React, Express, lodash, etc.
+
+DevDependencies:
+
+	DevDependencies, on the other hand, are packages that are only needed during development or for building/testing the project, but are not required for the application to run in production.
+	These might include tools for code linting, testing frameworks, build tools, or any other utilities needed during development.
+When someone installs your package or project with the --production flag, devDependencies are not installed. They are only installed when the project is installed without this flag, typically on a developer's machine or during CI/CD processes.
+Here's a breakdown of when to use each:
+
+Use Dependencies (dependencies):
+
+	When you need a package to be available in the runtime environment of your application.
+	For libraries, frameworks, or utilities that your application directly depends on to function correctly.
+
+Use DevDependencies (devDependencies):
+
+	When you need a package for development purposes only, such as testing, linting, or building.
+	For tools that are used in your development workflow but are not necessary for the final production build of your application.
+	
+	In summary, dependencies are for packages required for the application to run, while devDependencies are for packages required for development or building/testing purposes. Properly distinguishing between these two categories helps keep your project's dependencies organized and ensures that unnecessary packages are not included in the production build of your application.
+
+6.What is `node_modules` ? Is it a good idea to push that on git?
+
+	node_modules is a directory created by npm (Node Package Manager) or Yarn when you install dependencies for a Node.js project. It contains all the packages and their dependencies that your project requires, including the actual source code of those packages.
+
+	As for whether it's a good idea to push node_modules to Git, the general consensus is no, it's not a good idea, and it's usually recommended to exclude node_modules from version control. Here are a few reasons why:
+
+Size: The node_modules directory can become very large, especially for projects with many dependencies. Including it in your Git repository can bloat the size of your repository significantly, making cloning and fetching slower for collaborators and increasing storage requirements.
+
+Redundancy: The contents of node_modules can be reconstructed anytime using the dependency information specified in package.json or yarn.lock (if using Yarn). Including node_modules in version control is redundant because it duplicates information already present elsewhere in the project.
+
+Maintainability: Managing changes to node_modules in version control can become cumbersome. Since this directory is auto-generated and can contain thousands of files, it's generally not practical to review or track changes to these files in version control.
+
+7.What is the difference between `package.json` and `package-lock.json
+
+	package.json and package-lock.json are both files used in Node.js projects to manage dependencies, but they serve different purposes and contain different types of information:
+
+package.json:
+
+	package.json is a mandatory file in any Node.js project. It contains metadata about the project, such as its name, version, description, author, and license.
+	One of the key sections in package.json is the dependencies object, which lists the packages that your project depends on in production. It also may include a devDependencies object for development dependencies.
+	Developers typically manually manage the package.json file, adding, removing, or updating dependencies as needed.
+	The package.json file also includes scripts that can be executed using npm or Yarn.
+
+package-lock.json:
+
+	package-lock.json is a file automatically generated by npm or Yarn when dependencies are installed or updated in a project.
+	It serves as a record of the exact versions of all dependencies (and their transitive dependencies) that were installed. This includes not only direct dependencies listed in package.json, but also the specific versions of any sub-dependencies installed as well.
+	The purpose of package-lock.json is to provide deterministic and reproducible builds. It ensures that the same versions of dependencies are installed across different environments or by different developers.
+	While developers can manually update package.json to change dependencies, package-lock.json is meant to be managed by npm or Yarn automatically. It's generally not recommended to modify this file directly.
+	
+In summary, package.json is a manual file that contains metadata and dependency declarations for a project, while package-lock.json is an automatically generated file that locks down the exact versions of dependencies for reproducible builds. Both files play important roles in managing dependencies and ensuring project stability and consistency.
+
+8. Why should I not modify `package-lock.json`?
+	package-lock.json is a file automatically generated by npm or Yarn when dependencies are installed or updated in a project. It serves as a record of the exact versions of all dependencies (and their transitive dependencies) that were installed
+
+9.What is `.gitignore`? What should we add and not add into it?
+
+	.gitignore is a text file used by Git to specify intentionally untracked files that Git should ignore. When you add a file or pattern to .gitignore, Git will not track changes to those files or include them in commits. This is useful for excluding files that are generated during the development process, such as compiled binaries, temporary files, log files, or sensitive information.
+
+Here are some guidelines on what to add and not add to .gitignore:
+
+What to add:
+
+1.Dependency directories: Exclude node_modules or packages directories, which contain installed dependencies. These directories can be large and are typically not committed to version control.
+
+Example:
+node_modules/
+
+2.Generated files: Exclude files generated during the build process, such as compiled code, bundled JavaScript files, or transpiled CSS.
+
+Example:
+
+markdown
+Copy code
+dist/
+build/
+*.js
+*.css
+
+3.Temporary files: Exclude temporary or cache files generated by development tools or text editors.
+
+Example:
+
+Copy code
+.DS_Store
+.vscode/
+.idea/
+
+4.Environment files: Exclude environment configuration files containing sensitive information like passwords or API keys. Instead, use environment variables or configuration files that are not committed to version control.
+
+Example:
+
+bash
+Copy code
+.env
+.env.local
+.env.*.local
+Logs and backups: Exclude log files, backup files, or any other files that are not essential to the project.
+
+Example:
+
+bash
+Copy code
+*.log
+*.bak
+
+Remember to be mindful of what you include or exclude in .gitignore to ensure that your repository remains clean and only contains essential files for the project. It's a good practice to review and update .gitignore regularly as the project evolves and new files are added.
+
+10. What is the `dist` folder? in parcel
+
+	The dist folder in Parcel (or any other build tool) typically stands for "distribution" and is where the bundled and optimized files for your project are outputted.
+
+	When you build a project using Parcel, it takes your source files (such as JavaScript, CSS, HTML, images, etc.), processes them, and bundles them together, applying optimizations like minification, tree shaking, and code splitting. The resulting optimized files are then placed in the dist folder.
+
+	Here's what you might typically find in a dist folder after running a build with Parcel:
+
+	Bundled JavaScript files: If your project includes JavaScript files, Parcel will bundle them together into one or more optimized JavaScript files. These files may be minified and may have unique filenames generated by Parcel.
+
+	Processed CSS files: If your project includes CSS files (or stylesheets written in other languages like Sass or Less), Parcel will process and bundle them, optimizing them for production. Again, these files may be minified and have unique filenames.
+
+	HTML files: If your project includes HTML files, Parcel may process them, optimizing them for production. It may also inject links to the bundled JavaScript and CSS files.
+
+	Other assets: Depending on your project setup, Parcel may also process and optimize other assets like images, fonts, or static files, placing them in appropriate directories within the dist folder.
+
+	The dist folder is typically not included in version control, as its contents are generated during the build process and can be regenerated anytime. Instead, it's common practice to include instructions in the project's README or documentation on how to build the project and where to find the output files in the dist folder.
+
+11.What is `browserlists`
+
+	The term you're likely referring to is "Browserslist." Browserslist is a tool used to share target browsers between different front-end tools. It allows you to specify a list of target browsers and their versions, and various tools can use this list to optimize and tailor the output code for compatibility with those browsers.
+
+	Some common front-end tools that can use Browserslist include Autoprefixer, Babel, ESLint, and Stylelint. These tools can automatically adjust the generated code or apply polyfills based on the browsers specified in the Browserslist configuration.
+
+12. What is Tree Shaking?
+
+	Tree shaking is a term commonly used in the context of JavaScript module bundlers, like webpack or Rollup. It refers to the process of eliminating dead code (i.e., code that is not used) from your final bundled JavaScript file.
+
+	The term "tree shaking" originates from the concept of shaking a tree to remove dead leaves. In the context of JavaScript bundling, the "tree" represents the entire dependency tree of your application, while the "leaves" represent individual functions, classes, or variables.
+
+13. What is Hot Module Replacement?
+
+	Hot Module Replacement (HMR) is a feature in module bundlers like webpack, Parcel, and Rollup that allows modules to be updated in a running application without a full page refresh. It's a powerful tool for developers that significantly speeds up the development process by preserving the application state and updating only the modified modules, reducing the need for manual reloads.
+
+Here's how Hot Module Replacement typically works:
+1.Detection of changes
+2.Replacement of modules
+3.Preservation of application state
+4.Fast updates
+
+	Hot Module Replacement is especially useful in modern web development workflows, particularly when working with frameworks like React, Vue.js, or Angular, where components are often modular and can be updated independently. It's commonly used during development to quickly iterate on changes, fix bugs, or experiment with different features without disrupting the user experience. However, it's important to note that HMR is typically intended for use in development environments and is not recommended for production use.
+
+14.List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words.
+	
+	Certainly! Parcel is a powerful bundler that comes with several features that make web development faster and more efficient. Here are five of my favorite superpowers of Parcel:
+
+1.Zero Configuration: Parcel requires no configuration out of the box. This means you can get started with your project immediately without having to spend time setting up build configurations. Parcel automatically detects your project's structure and handles everything from transpilation to bundling, allowing you to focus on writing code.
+
+2.Built-in Support for Various Asset Types: Parcel supports a wide range of asset types out of the box, including JavaScript, CSS, HTML, images, and more. This means you can import these assets directly into your project without needing additional configuration or plugins.
+
+3.Blazing Fast Performance: Parcel is known for its speed. It leverages multicore processing and caching to deliver lightning-fast build times, even for large projects with many dependencies. This allows developers to iterate quickly and see changes reflected in the browser almost instantly.
+
+4.Automatic Dependency Resolution: Parcel automatically resolves dependencies for you, so you don't have to worry about managing complex dependency trees. Whether you're using npm packages, CSS imports, or other assets, Parcel handles the dependency resolution transparently, making your development workflow smoother.
+
+5.Hot Module Replacement (HMR): Parcel comes with built-in support for Hot Module Replacement, allowing you to see changes in your code reflected in the browser in real-time without having to manually refresh the page. This speeds up development by preserving the application state and updating only the modified modules, making the development process more efficient.
+
+Now, let's dive deeper into describing three of these superpowers:
+
+1.Zero Configuration: Parcel's zero-configuration setup is a game-changer for developers, especially those new to web development or those who prefer a hassle-free setup. With Parcel, you can start coding immediately without worrying about complex configuration files. This saves valuable time and reduces the initial setup overhead, allowing developers to focus on building their projects.
+
+2.Blazing Fast Performance: Parcel's speed is truly remarkable. By leveraging multicore processing and intelligent caching mechanisms, Parcel is able to deliver incredibly fast build times, even for large projects. This means that developers spend less time waiting for builds to complete and more time coding and iterating on their projects, leading to a more productive development workflow.
+
+3.Hot Module Replacement (HMR): Parcel's built-in support for Hot Module Replacement is a game-changer for front-end developers. HMR allows developers to see changes to their code reflected in the browser in real-time, without the need for a full page refresh. This enables faster iteration and experimentation, as developers can immediately see the effects of their changes without disrupting the application state. HMR also helps in preserving the developer's mental flow, as they can stay focused on coding without being interrupted by manual refreshes.
+
+
+~version “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+
+^version “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to <2.0.0.
+
+value		desc
+
+~version	Approximately equivalent to version, i.e., only accept new patch versions
+
+^version	Compatible with version, i.e., accept new minor and patch versions
+
+version	        Must match version exactly
+
+>version	Must be greater than version
+
+>=version	Must be equal or greater than version
+
+<version	Must be lesser than version
+
+<=version	Must be equal or lesser than version
+
+1.2.x		1.2.0, 1.2.1, etc., but not 1.3.0
+
+*		Matches any version
+
+latest		btains latest release
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
