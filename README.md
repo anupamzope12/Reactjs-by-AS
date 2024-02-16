@@ -1,3 +1,3 @@
 # Reactjs-by-AS
 <br>
-<h1>It is reactJs tutorial series code of Akshay Saini</h1>
+<h5>It is reactJs tutorial series code by Akshay Saini</h5>
