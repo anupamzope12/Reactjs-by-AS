@@ -1,58 +1,57 @@
-/*
-*
-*
-*
-* Created Server
-* HRM = Hot Module Replacing // parcel will keep a track of all file updating
-* File Watcher Algorithm - C++  
-* BUNDLING
-* MINIFY
-* CLEANINIG OUR CODE
-* Dev and Production Build
-* Super Fast build algorithm
-* Image Optimization
-* Caching while development 
-* Compresssion
-* Compatiable with older version of browser
-* HTTPS on dev
-* PORT Number
-* Consistent Hashing Algorithm
-* Zero Config
-* 
-* Transitive Dependencies
-*
-*
-*/
-
-
 import React from "react";
 import ReactDOM  from "react-dom/client";
 
-const heading = React.createElement(
-    "h1",
-    {
-      id: "title",
-    },
-    "Heading 1 from parcel"
-  );
-  const heading2 = React.createElement(
-    "h2",
-    {
-      id: "title",
-    },
-    "Heading 2"
-  );
-  const container = React.createElement(
-    "div",
-    {
-      id: "container",
-    },
-    [heading, heading2]
-  );
+  //JSX ?? 
+  // JSX => react.ceateElement => Object =>HTML(DOM)
+  // this conversionJSX => react.ceateElement is done by babel
 
-  console.log(heading);
+  // const heading = (    // This React Element
+  //   <h2 id="title" key="h2">  
+  //      Namaste React 
+  //   </h2> 
+  //   )
+
+  const Title = () => (  
+
+  <h2 id="title" key="h2">  
+     Namaste React 
+  </h2>
+
+  )
+
+  
+    // <h2 id="title" key="h2"> Namaste React </h2> jsx expression
+    
+    //React Component
+    // - Functional - NEW - I will use this most of the time
+    // - Class Based Component - OLD - we will lern this tool
+
+// Name of component should be start with capital letter - it's not mandatory
+
+const xyz=45;
+    const HeaderComponent1 = () =>{    // This is a functiuonal component
+      return(
+        <div>
+          <Title/>
+          {/* { xyz } // we can write any java script code inside this curly braces */}
+          {Title()}
+        <h1>Namaste React Functional Component</h1>
+          <h2>This is a H2 tag</h2>
+        </div>
+      )
+    }
+    const HeaderComponent2 = () =>{
+        <div>
+        <h1>Namaste React Functional Component</h1>
+          <h2>This is a H2 tag</h2>
+        </div>
+    }
+
   const root = ReactDOM.createRoot(document.getElementById("root"));
   //passing a react element inside the root
+  
   //async defer
-  root.render(container);
+  // root.render(heading); // to render react element
+
+  root.render(<HeaderComponent1/>) // to render functional component
 
