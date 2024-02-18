@@ -16,7 +16,7 @@ pacakage-lock => to know what version exact using on production
 pacakage-lock .json is very impt file it lock the version.It keeps track of 
 It maints the hash of it maintains integrity
 
-npm install -D parcel==> after install ing gthe node modules is also get come which like database for parcel
+npm install -D parcel==> after installing the node modules is also get come which like database for parcel
 
 Should we add node modules to git repo => No 1.It is very heay file 
 2. becaues to pacakge lock.json has suffcient information so we can generate it agaain

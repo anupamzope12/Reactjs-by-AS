@@ -1,0 +1,31 @@
+.container{
+
+    display: flex;
+    border: 2px;
+    background-color: azure;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 10px; /* Add some padding for better spacing */
+
+}
+
+#header-icon{
+    margin: 0;
+}
+
+.searchbox{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 2px;
+    background-color: azure;
+    border-radius: 12px;
+}
+
+#searchbox{
+    height: 30px;
+    width: 400px;
+    border-radius: 20px;   
+    padding-left: 20px;
+
+}
