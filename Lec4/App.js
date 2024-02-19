@@ -47,6 +47,7 @@ const xyz=45;
         </div>
     }
 
+   
   const root = ReactDOM.createRoot(document.getElementById("root"));
   //passing a react element inside the root
   
