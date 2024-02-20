@@ -1,0 +1,68 @@
+Any piece of jSX thta you right that have only one parent
+
+
+Suppose if you want 2 parent so either you can give <div/> or <rect.Fragment/>
+
+React.fragment	=> is a component which is exported by react
+
+			is a like a empty tag  or <> </>
+it do not creates the unnecesay creation of <div/> tag inside my root
+if dont want that div then we can use rect.fragment
+
+
+How to give style inside react
+
+in HTML we can give style using inline style
+but in rect or javasScript we nedd to give tyle inside the object becaure react will understand object
+
+other way is use to give className and write the styles in csss file 
+anothe way is used external library such as tailwind
+
+    // styleObj= {
+    //   backgroundColor:"yellow",
+    //   border:"1px solid red"
+    // }
+    // //Inline styling in react 
+    // const jsx= (
+    //   <div style={styleObj}>
+    //     <h1>jsx</h1>
+    //     <h1>second jsx</h1>
+    //   </div>
+    // )
+
+join items in array js
+
+Config Driven UI => We control our website using config driven UI, so that we can have one website instead of many this is done by backend
+
+optional chaining Java Script HW
+
+props
+
+in functional programming instead of for we can use map which is used in industry
+
+what is difference between map and for each
+
+
+Virtual Dom=Representention of dom with us is known as virtualdom
+
+why we need: due to of Reconcialation of react
+react use a diff alogoriythm and find out what is updtated what needs to update it just update that part not render the whole page again this process is known as reconciation
+
+diff algorithm finds out the difeernece between trees
+tree is nothing but the virtual representaion of dom
+it re r
+
+why do we use keys   =>
+
+if we dont have Ids 
+
+we want to make react smart by giving key
+
+ReactFiber => new reconcilation engine is come in react16 is responsible for DIFF
+
+Why dont we use index as a key?
+
+never use index as a key
+read article from documentation
+
+ 
