@@ -563,7 +563,287 @@ c.Easier Testing: They are easier to test because they are just plain JavaScript
 
 
 
+								  DAY 5 Class Notes
+Any piece of jSX that you write that have only one parent
 
+
+Suppose if you want 2 parent so either you can give <div/> or <react.Fragment/>
+
+React.fragment	=> is a component which is exported by react
+
+			is a like a empty tag  or <> </>
+it do not creates the unnecessary creation of <div/> tag inside my root
+if don't want that div then we can use react.fragment
+
+
+How to give style inside react
+
+in HTML we can give style using inline style
+but in rect or javaScript we need to give style inside the object because react will understand object
+
+other way is use to give className and write the styles in csss file 
+another way is used external library such as tailwind
+
+    // styleObj= {
+    //   backgroundColor:"yellow",
+    //   border:"1px solid red"
+    // }
+    // //Inline styling in react 
+    // const jsx= (
+    //   <div style={styleObj}>
+    //     <h1>jsx</h1>
+    //     <h1>second jsx</h1>
+    //   </div>
+    // )
+
+join items in array js
+
+Config Driven UI => We control our website using config driven UI, so that we can have one website instead of many this is done by backend
+
+optional chaining Java Script HW
+
+props
+
+in functional programming instead of for loop we can use map which is used in industry
+
+what is difference between map and for each
+
+
+Virtual Dom=Representention of dom with us is known as virtualdom
+
+why we need: due to of Reconcialation of react
+react use a diff alogoriythm and find out what is updtated what needs to update it just update that part not render the whole page again this process is known as reconciation
+
+diff algorithm finds out the difeernece between trees
+tree is nothing but the virtual representaion of dom
+it re r
+
+why do we use keys   =>
+
+if we dont have Ids 
+
+we want to make react smart by giving key
+
+ReactFiber => new reconcilation engine is come in react16 is responsible for DIFF
+
+Why dont we use index as a key?
+
+never use index as a key
+read article from documentation
+
+								   DAY 5 ASSIGNMENT
+
+1.Is JSX mandatory for React?			
+	No, JSX (JavaScript XML) is not mandatory for React development, but it is highly recommended and widely used for several reasons:
+	
+	However, under the hood, JSX is converted to JavaScript function calls by tools like Babel before being executed in the browser. If you prefer, you can write React components using pure JavaScript without JSX, but this approach is less common and may be less convenient for most developers.
+
+2.Is ES6 mandatory for React?
+
+	ES6 (ECMAScript 2015) is not strictly mandatory for React development, but it is highly recommended and widely used for several reasons:
+
+a.Arrow Functions: ES6 arrow functions provide a concise syntax for writing functions, which is commonly used in React component definitions, event handlers, and callback functions.
+
+b.Classes: ES6 classes offer a more familiar and convenient syntax for defining React components, especially for those coming from object-oriented programming backgrounds.
+
+c.Template Literals: Template literals allow for easier string interpolation and multiline strings, which can improve the readability of JSX code.
+
+d.Destructuring Assignment: Destructuring assignment makes it easier to extract values from objects and arrays, which is commonly used when working with props and state in React components.
+
+e.Spread Syntax: The spread syntax (...) allows for easy copying of arrays and objects, which is often used for passing props and spreading state in React components.
+
+f.Modules: ES6 modules provide a standardized way to organize and import/export code, which is commonly used in React applications to manage component files and dependencies.
+
+	While it's possible to write React code using older JavaScript syntax (ES5 and earlier), adopting ES6 features can significantly improve code readability, maintainability, and developer productivity. Additionally, many modern React features and libraries assume the use of ES6 syntax, so it's generally recommended to use ES6 when developing React applications.
+
+3.Different ways to include a React component named TitleComponent within the JSX syntax
+
+{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX
+
+
+4.What is <React.Fragment></React.Fragment> and <></> ?
+
+	Wrap elements in <Fragment> to group them together in situations where you need a single element. Grouping elements in Fragment has no effect on the resulting DOM; it is the same as if the elements were not grouped. The empty JSX tag <></> is shorthand for <Fragment></Fragment> in most cases.
+
+Props 
+optional key: Fragments declared with the explicit <Fragment> syntax may have keys.
+
+Caveats 
+If you want to pass key to a Fragment, you can’t use the <>...</> syntax. You have to explicitly import Fragment from 'react' and render
+<Fragment key={yourKey}>...</Fragment>.
+
+import React from 'react';
+
+const MyComponent = () => {
+  return (
+    <React.Fragment>
+      <h1>Hello</h1>
+      <p>Paragraph</p>
+    </React.Fragment>
+  );
+};
+
+5.How to give style inside react
+
+In HTML we can give style using inline style
+but in rect or javaScript we need to give style inside the object because react will understand object
+
+other way is use to give className and write the styles in csss file 
+another way is used external library such as tailwind
+
+    // styleObj= {
+    //   backgroundColor:"yellow",
+    //   border:"1px solid red"
+    // }
+    // //Inline styling in react 
+    // const jsx= (
+    //   <div style={styleObj}>
+    //     <h1>jsx</h1>
+    //     <h1>second jsx</h1>
+    //   </div>
+    // )
+
+6.What is Config Driven UI => 
+	
+	We control our website using config driven UI, so that we can have one website instead of many this is done by backend
+
+	A config-driven UI in ReactJS refers to an approach where the user interface (UI) components and their behaviors are determined by a configuration rather than being hardcoded in the source code. In this approach, the structure, appearance, and behavior of UI components are defined through a configuration file or data structure, which is then interpreted by the application to render the UI accordingly.
+
+Here are some key aspects of a config-driven UI in ReactJS:
+
+a.Flexibility: Config-driven UI allows for greater flexibility in defining and customizing UI components without directly modifying the source code. Developers can adjust the UI behavior by simply updating the configuration, which can be particularly useful in scenarios where UI changes are frequent or need to be customizable by end-users.
+
+b.Separation of Concerns: By decoupling the UI configuration from the application logic, config-driven UI promotes a cleaner separation of concerns. Developers can focus on building reusable UI components and defining their behavior independently of the specific application requirements.
+
+c.Dynamic UI Generation: Config-driven UI enables the dynamic generation of UI components based on runtime data or user preferences. This dynamic nature allows applications to adapt to changing requirements or user inputs without requiring code changes.
+
+d.Configuration Formats: Configurations can be defined using various formats such as JSON, YAML, or JavaScript objects, depending on the preference of the development team and the complexity of the UI requirements.
+
+e.Abstraction and Reusability: Config-driven UI promotes abstraction and reusability of UI components by encapsulating their implementation details behind a configuration interface. This makes it easier to reuse UI components across different parts of the application or in other projects.
+
+	Overall, a config-driven approach in ReactJS offers a more dynamic, flexible, and maintainable way to build user interfaces, especially in complex applications with evolving requirements. However, it may require careful planning and design to ensure that the configuration format is intuitive, extensible, and well-documented.
+
+7.What is props in ReactJs
+
+	In ReactJS, props (short for properties) are a way to pass data from a parent component to a child component. They are immutable and are used to customize or configure a component when it is created.
+
+	Props are read-only and cannot be modified within the component. They are passed from the parent component and remain fixed throughout the component's lifecycle. If a component needs to modify its data over time, it should use state instead.
+
+8.What is Virtual Dom
+
+why we need: due to of Reconcialation of react
+react use a diff alogoriythm and find out what is updtated what needs to update it just update that part not render the whole page again this process is known as reconciation
+
+diff algorithm finds out the difeernece between trees
+tree is nothing but the virtual representaion of dom
+it re r
+
+	In ReactJS, the Virtual DOM (Document Object Model) is a lightweight, in-memory representation of the actual DOM. It is a programming concept where an ideal or virtual representation of a UI is kept in memory and synced with the real DOM by a library such as React. The Virtual DOM is a critical part of React's performance optimization strategy.
+
+Here's how it works:
+
+a.Initial Rendering: When you create a React component and render it to the DOM, React creates a virtual representation of the DOM tree in memory. This virtual representation mirrors the structure of the actual DOM but is a lightweight JavaScript object.
+
+b.Updates and Reconciliation: When the state or props of a component change, React doesn't directly manipulate the real DOM. Instead, it creates a new virtual DOM tree with the updated state/props.
+
+c.Diffing and Reconciliation: React then performs a process called "diffing" where it compares the new virtual DOM tree with the previous one to identify the differences or updates.
+
+d.Minimal DOM Manipulation: Once the differences are identified, React calculates the most efficient way to update the actual DOM to reflect the changes. Rather than updating the entire DOM tree, React only updates the specific parts of the DOM that have changed. This approach minimizes the number of DOM manipulations, leading to better performance.
+
+e.Batched Updates: React batches multiple updates together and performs them in a single pass to further optimize performance.
+
+	By using the Virtual DOM, React reduces the amount of direct interaction with the browser's DOM API, which is typically slower. Manipulating the Virtual DOM is faster and more efficient because it's an in-memory representation. This approach leads to better performance and a smoother user experience in React applications, especially for complex and dynamic UIs.
+
+8.What is reconciliation in react
+
+https://github.com/acdlite/react-fiber-architecture
+
+reconciliation
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+	Reconciliation in React refers to the process of updating the DOM to reflect the most recent changes in the component's state or props. When a component's state or props change, React needs to determine what parts of the DOM need to be updated to reflect those changes efficiently. Reconciliation is the algorithm that React uses to perform this task.
+
+Here's how reconciliation works in React:
+
+a.Virtual DOM Comparison: React first creates a new virtual DOM representation of the component based on its updated state or props.
+
+b.Diffing Algorithm: React then compares the new virtual DOM with the previous virtual DOM (generated before the state/props change) using a process called "diffing." Diffing involves recursively comparing the old and new virtual DOM trees to identify the differences or updates.
+
+c.Identifying Changes: During the diffing process, React identifies which elements have changed, been added, or been removed.
+
+d.Updating the DOM: Once the differences are identified, React updates the actual DOM to reflect the changes. Instead of re-rendering the entire component or updating the entire DOM tree, React selectively updates only the parts of the DOM that have changed.
+
+e.Reconciliation Strategy: React employs various optimization strategies during reconciliation to make the process more efficient, such as key-based reconciliation, which helps React identify elements that have moved within a list, improving performance when rendering lists.
+
+	By efficiently updating only the necessary parts of the DOM, React ensures better performance and a smoother user experience. Reconciliation is a crucial part of React's architecture, allowing it to efficiently manage complex UIs with dynamic data.
+
+9.What is React Fiber
+
+https://github.com/acdlite/react-fiber-architecture
+
+	React Fiber is a complete rewrite of React's core algorithm, designed to improve the performance and responsiveness of React applications, particularly for complex and asynchronous user interfaces. It was introduced in React version 16.
+
+	The primary goal of React Fiber is to enable better handling of asynchronous operations, such as rendering updates, layout calculations, and handling user input. It achieves this by breaking the rendering work into smaller units called "fibers" and allowing React to prioritize, pause, and resume work as needed.
+
+Key features and benefits of React Fiber include:
+
+a.Incremental Rendering: React Fiber enables incremental rendering, meaning it can split rendering work into chunks and spread it out over multiple frames. This allows React to prioritize high-priority updates and maintain a responsive user interface, even during heavy rendering tasks.
+
+b.Improved Prioritization: With React Fiber, rendering work is prioritized based on importance, allowing React to ensure that critical updates (such as user interactions) are processed quickly, while less critical updates (such as background tasks) can be delayed or deferred.
+
+c.Concurrency: React Fiber introduces the concept of concurrent rendering, which enables React to work on multiple tasks concurrently and switch between them as needed. This helps prevent UI freezes and improves overall responsiveness.
+
+d.Error Boundaries: Fiber enhances error handling by introducing error boundaries, which are components that catch and handle errors that occur during rendering. Error boundaries prevent errors from propagating up the component tree and crashing the entire application.
+
+e.Support for Asynchronous APIs: Fiber lays the groundwork for supporting asynchronous APIs natively within React, allowing developers to work with asynchronous data fetching, animations, and other asynchronous operations more efficiently.
+
+	Overall, React Fiber represents a significant improvement in the performance, responsiveness, and concurrency capabilities of React applications, making it better equipped to handle modern web development challenges. It forms the foundation for future enhancements and optimizations in the React ecosystem.
+
+10.Why we need keys in React? When do we need keys in React?
+
+why do we use keys   =>
+
+if we dont have Ids 
+
+we want to make react smart by giving key
+
+	In React, keys are special attributes that are used to uniquely identify elements in a collection (such as an array) of JSX elements. Keys help React identify which items have changed, are added, or are removed. They are essential for efficient rendering and updating of lists or collections of elements.
+
+Here are some key reasons why we need keys in React:
+
+a.Optimizing Reconciliation: React uses a process called reconciliation to efficiently update the user interface in response to changes in data or state. When rendering lists or collections of elements, React needs a way to identify which elements have changed, been added, or been removed. Keys provide React with this information, allowing it to update the DOM only for the elements that have changed.
+
+b.Maintaining Component State: When rendering lists of components that have their own internal state (such as input fields or checkboxes), React needs keys to ensure that the state of each component is preserved correctly during updates. Without keys, React may mistakenly reuse components or lose their state, leading to unexpected behavior.
+
+c.Performance Optimization: Keys help React optimize the rendering process by reducing unnecessary DOM manipulations. When an element is added, removed, or reordered in a list, React can use keys to quickly determine which elements need to be updated, inserted, or removed without having to re-render the entire list.
+
+d.Preventing Component Reordering: Keys also help prevent unnecessary reordering of components within a list. When React reconciles two lists, it tries to match elements with the same key in the old and new lists. If keys are not provided or are not unique, React may incorrectly reorder the components, leading to a jarring user experience.
+
+	In summary, keys are essential in React for efficient rendering, preserving component state, optimizing performance, and preventing unnecessary reordering of elements in lists or collections. They should be used whenever rendering dynamic lists of elements or components to ensure a smooth and predictable user experience.
+
+11.Can we use index as keys in React?
+	Yes, you can use the index as keys in React, but it's generally not recommended unless you're certain that the list is static and will not be re-ordered or filtered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
