@@ -47,7 +47,7 @@ what is difference between map and for each
 Virtual Dom=Representention of dom with us is known as virtualdom
 
 why we need: due to of Reconcialation of react
-react use a diff alogoriythm and find out what is updtated what needs to update it just update that part not render the whole page again this process is known as reconciation
+react use a diff alogoritham and find out what is updatated what needs to update it just update that part not render the whole page again this process is known as reconciation
 
 diff algorithm finds out the difeernece between trees
 tree is nothing but the virtual representaion of dom
