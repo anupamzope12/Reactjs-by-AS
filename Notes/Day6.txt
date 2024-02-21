@@ -1,0 +1,51 @@
+2 ways to export
+
+1.export deafult
+
+why default =>with default keryword we can export only one component
+
+const Title = ()=>{
+	}
+export default Title;
+
+import Title from ""
+
+2.exporting b y name
+
+export const Title = ()=>{
+	}
+
+import {Title} from ""
+
+when you are in the same file you don't need to import or export 
+
+every component in react mainatins a state so you can put in all varaible into your state and every time you create your local variable you use usestate in react
+
+useState Hook
+
+supppose you have to create a local variable in react you have to use a state variable and those state variable ijnreacts is known as useState hook
+
+What is state
+What is hook?
+What is useState?
+
+What is hook?
+hook is just a normal function 
+but every hook has a specifuic function for it 
+ 
+useState function => to create a state variable
+this function returns a array and 1st variable of array is your variable name 
+
+const searchtesxt="KFC" // create a normal variable in jav
+
+const [searchtext] =useState ("KFC")//create local stste vraiable
+//Default value 
+
+react says if you want use local variable in react then use useState hook in react
+
+here I am writing the serchtext and here reading the search text this is called as Two way binding
+
+why do we need statevariable => to change the state of variable because react will not understant that thats why we use useState hook
+
+
+
