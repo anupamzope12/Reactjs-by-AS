@@ -1,19 +1,23 @@
+							   DAY 5 Class Notes
 2 ways to export
 
-1.export deafult
+1.export by deafult
 
-why default =>with default keryword we can export only one component
+why default => with default keryword we can export only one component
 
 const Title = ()=>{
+
 	}
+
 export default Title;
 
 import Title from ""
 
-2.exporting b y name
+2.exporting by name
 
 export const Title = ()=>{
-	}
+	
+     }
 
 import {Title} from ""
 
@@ -23,7 +27,7 @@ every component in react mainatins a state so you can put in all varaible into y
 
 useState Hook
 
-supppose you have to create a local variable in react you have to use a state variable and those state variable ijnreacts is known as useState hook
+supppose you have to create a local variable in react you have to use a state variable and those state variable in reacts is known as useState hook
 
 What is state
 What is hook?
@@ -36,9 +40,9 @@ but every hook has a specifuic function for it
 useState function => to create a state variable
 this function returns a array and 1st variable of array is your variable name 
 
-const searchtesxt="KFC" // create a normal variable in jav
+const searchtesxt="KFC" //create a normal variable in jav
 
-const [searchtext] =useState ("KFC")//create local stste vraiable
+const [searchtext] =useState ("KFC") //create local state variable
 //Default value 
 
 react says if you want use local variable in react then use useState hook in react
@@ -46,6 +50,114 @@ react says if you want use local variable in react then use useState hook in rea
 here I am writing the serchtext and here reading the search text this is called as Two way binding
 
 why do we need statevariable => to change the state of variable because react will not understant that thats why we use useState hook
+
+						      DAY 5 Assignment Notes
+1.Ways to export or import in ReactJs
+
+Three ways  
+	a.export by deafult
+	b.exporting by name
+	c.Wildcard Export (* as)
+
+a.export by deafult
+
+why default => with default keryword we can export only one component
+
+const Title = ()=>{
+
+	}
+
+export default Title;
+
+import Title from ""
+
+b.export by name
+
+export const Title = ()=>{
+	
+     }
+
+import {Title} from ""
+
+when you are in the same file you don't need to import or export 
+
+
+c.Wildcard Export (* as):
+
+Wildcard export allows you to export all named exports from a module under a single alias.
+You use the * as syntax to import all named exports from a module and assign them to an object with the specified name.
+
+// module.js
+export const foo = 'foo';
+export function bar() {
+    return 'bar';
+}
+
+// main.js
+import * as myModule from './module.js';
+console.log(myModule.foo); // Output: 'foo'
+console.log(myModule.bar()); // Output: 'bar'
+
+	Named Export is used when you want to export multiple variables, functions, or classes from a module.
+
+	Default Export is used when you want to export a single value as the default export of the module.
+
+	Wildcard Export (* as) is used when you want to import all named exports from a module under a single alias.
+
+2.What is State in ReactJs
+
+	In React.js, state refers to an object that represents the internal data of a component. It allows components to manage and maintain their own data, which can change over time as a result of user interactions, network requests, or other factors.
+
+	State in React is used to store information that affects a component's behavior and appearance. When the state of a component changes, React automatically re-renders the component to reflect the updated state.
+
+3.What are React Hooks?
+
+	React Hooks are functions that allow functional components in React to use state and other React features without writing a class. They were introduced in React version 16.8 to address various issues related to state management, code reuse, and lifecycle methods in functional components.
+
+	Before the introduction of hooks, stateful logic and side effects in React components were primarily managed using class components and lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount. While class components served their purpose well, they often led to complex and verbose code, making it harder to understand and maintain.
+
+	React Hooks provide a more straightforward and composable way to manage state and side effects in functional components. Some of the most commonly used React Hooks include:
+
+useState: Allows functional components to manage local state.
+
+useEffect: Allows functional components to perform side effects, such as data fetching, subscribing to external events, or manually changing the DOM.
+
+useContext: Allows functional components to consume context values from the nearest Context.Provider component in the component tree.
+
+useReducer: Provides an alternative to useState for managing more complex state logic using reducers.
+
+useCallback and useMemo: Memoize functions and values to avoid unnecessary re-renders.
+
+useRef: Allows functional components to hold a mutable reference to a DOM element or any other value that persists across renders.
+
+	Using React Hooks, developers can write more concise, readable, and reusable code in functional components without sacrificing the benefits of state management and side effects. Additionally, hooks encourage better separation of concerns and facilitate the creation of custom hooks for sharing logic between components.
+
+4.What is useState
+
+	In React.js, useState is a Hook that allows functional components to manage state. Prior to the introduction of Hooks, functional components in React were stateless and could not directly manage state. However, with the useState Hook, functional components can now use stateful logic without converting them into class components.
+
+	The useState Hook returns a stateful value (often referred to as the state variable) and a function to update that value. It allows you to declare state variables inside functional components, providing a simpler and more concise syntax compared to class components.
+
+import React, { useState } from 'react';
+
+const MyComponent = () => {
+  // useState returns an array with two elements:
+  // - the current state value (count in this example)
+  // - a function to update the state (setCount in this example)
+  const [count, setCount] = useState(0);
+
+5.Why do we need a useState Hook?
+
+The useState Hook in React.js serves several important purposes, making it a fundamental tool for functional components:
+
+State Management in Functional Components: Before the introduction of Hooks, functional components in React were stateless and couldn't manage their own state. With the useState Hook, functional components can now use stateful logic, allowing them to manage state without converting to class components.
+
+Simplified Syntax: Using useState provides a simpler and more concise syntax compared to class components. It eliminates the need for writing constructor methods and using this.setState, reducing boilerplate code and making the component code easier to read and write.
+
+
+
+
+
 
 
 

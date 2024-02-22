@@ -10,7 +10,7 @@ babel.rc is configuration file for babel
 
 npm install babel-plugin-transform-remove-console --save-dev 
 
-after instakling we need to configure the babel also
+after instaling we need to configure the babel also
 for that we need to create one file .bablerc
 
 .bablerc
