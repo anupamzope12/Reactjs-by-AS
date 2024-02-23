@@ -1,7 +1,7 @@
-							   DAY 5 Class Notes
+							   	DAY 5 Class Notes
 2 ways to export
 
-1.export by deafult
+1.export by default
 
 why default => with default keryword we can export only one component
 
@@ -23,7 +23,7 @@ import {Title} from ""
 
 when you are in the same file you don't need to import or export 
 
-every component in react mainatins a state so you can put in all varaible into your state and every time you create your local variable you use usestate in react
+every component in react maintains a state so you can put in all varaible into your state and every time you create your local variable you use usestate in react
 
 useState Hook
 
@@ -49,7 +49,7 @@ react says if you want use local variable in react then use useState hook in rea
 
 here I am writing the serchtext and here reading the search text this is called as Two way binding
 
-why do we need statevariable => to change the state of variable because react will not understant that thats why we use useState hook
+why do we need statevariable => to change the state of variable because react will not understand that thats why we use useState hook
 
 						      DAY 5 Assignment Notes
 1.Ways to export or import in ReactJs

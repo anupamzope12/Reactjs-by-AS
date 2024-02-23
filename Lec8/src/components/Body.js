@@ -17,7 +17,7 @@ function  filterData(searchText,restaurants){
 }
 
 const Body = ()=>{
-    //How do I keep a acopy of All resttra
+    //How do I keep a acopy of All restaurants
     const [allRestaurants,setAllRestaurants]=useState([]);
     const [searchText,setSearchText]=useState(""); // returns=[state varailbe name,function to update the variable]
     const [filterdRestaurants, setFilterdRestaurants] = useState([]);
