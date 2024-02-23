@@ -1,0 +1,107 @@
+Hook is basicaaly a normal js fucntion which comes from react
+
+when you have a website it nedds somedata on it and when to do something then data should be updated , when there is something thta chnages on UI we use local variable o
+
+ReactFiber is new reconcialtion alogoritham that comes in react16 version
+
+react is so fast due to of superpower of diff algoritham
+
+react does not track the variable hece we use useState 
+react will able to track only local variable 
+
+when we click on change title button it render the whole header component and trigger the reconcilation process
+
+when we heat change title button react will quickly refresh the component and
+and trigger the reconcialtion process
+
+microservices VS monolithic services
+
+monolithic services =>
+
+
+
+microservices =>  
+
+foodvillais UI miccroservices
+
+
+How to call api in javaScript
+
+Two ways to call API
+
+1 I will loads the page=> call the API =>render the page
+
+2. loads=>render our page => API call => update ui
+
+react give us amzaing functionaliy called useEffect
+
+useEffect is a function but you call it by calling a another function to it
+this another function is a callback function 
+
+how you call this useEffect hook by giving this this 2 paramters one is call back function and another is dependency array
+
+callback function means it will not be called immedialy it will call whenever useEffect will be called
+
+there are two ways to render the component => 1 on state change 2 props changes
+
+  useEffect(()=>{
+        console.log("call this when dependency is chnage")
+    },[searchText])
+    
+when ever my dependency chnage means seachText change my         console.log("call this when dependency is chnage")
+this wiil be called
+
+if I dont pass any dependency it will call only once
+
+when you have a call back function in useEffect hook with empty dependency array it will be called after the initial rendering
+
+what is cors
+read the artical 
+watch the video
+https://www.youtube.com/watch?v=tcLW5d0KAYE
+
+
+read about optional chaining
+
+when we use useEffect our react render our component and useEffect is called once
+
+ 
+    useEffect(()=>{
+        getRestaurants();
+    },[])//thit is a best way to make an API call
+
+UX and UI design read about that
+shimmer UI 
+
+58-393 396-716
+
+  2	          2	    5
+65-407 462-786 882-2565 3464-4295
+
+Conditional rendering
+
+types of rendering
+Shimmer ui or Data API ui 
+
+How to code Shimmer UI
+
+How do you avoid rendering a component
+
+1.optional chainig 
+or
+2.
+
+Eary Return
+
+HW => 1st check for all restruat and then check shimmer and then 
+
+JS Expression vs JS Segment
+
+read JSX Curly braces
+
+what toggled
+
+const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json=await data.json();
+
+//why do we do this twice
