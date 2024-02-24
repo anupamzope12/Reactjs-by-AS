@@ -1,0 +1,55 @@
+useEffect is a hook which react give us which is called after the componenet is render,it takes  call back function and  is dependency array
+
+component will render use effect will called and then if any changes made then that will be render
+
+if I dont not give a symbol of empty array then my use effect is not depend on any one then my useEffect will be called after each rendering
+
+react says do not create component inside component you can call it inside 
+
+never ever write a useState inside a if Condition
+also nerver write is inside a forLoop
+never ever write a hook outside a functional component
+
+HW
+why CDN is greate place to store your images
+
+npm packages 
+formik => library
+
+react router dom
+
+npm i react-router-dom
+
+create browser router is a function that will get from react rputer dom
+
+Router Provider is a component which is coming from react router dom
+
+useRouterError => is a library that provide us error from react-router-dom
+we can catch this error and useRouterError hook give us acces to this error
+
+what is disadvanatges of anchor tag
+
+
+//SPA =>with SPA application our applicationour page does not load
+// two types of routing 1.client side routing  2. server side routing
+
+server side routing is away that all pages comeds from server
+
+client side rounting we wiil do client side routing =>means that we dont wnat to load any thing from server component is alreadybthre we are jus putting there
+
+Link component fro react router dom who develop ythis remix
+instead of anchor tag we use link but if you inspect it is also anchor that
+At the end of day Link uses anchor tag
+
+nested routing
+All the childern go into the outlet ccourding to the outlet
+
+when I click on about and contact and Home page it gone into the outlet
+outlet is get filled what you passed to it
+what is outlet=>named export component
+
+dynamic routing=>
+//How ro use dynamic URL
+useParams
+
+Object.values
