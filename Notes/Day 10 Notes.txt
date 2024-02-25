@@ -1,0 +1,202 @@
+Lets Get Classy
+
+React Initially start with class based component
+
+Relative path  
+
+childern are always render inside outlet 
+
+import React from 'react;
+
+class profile extends React.Component {
+	render(){
+		return (
+	// You can not create a class component w/o render
+	// Render methodd return some JSX        
+		)	
+	
+	}	
+}
+
+export default Profile;
+
+in class based component react automactically give acces to props
+
+when we passed props in clss based component react will collect all this props and will attach to this class component
+then we can use that props
+
+class Profile extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+// why do we need this what is super why we use it and when
+// whenever the component is envoked constructor is called and this is the best place to create state
+
+just like props react also give access to this.state
+
+constructor 
+then component render and then component did mount called
+
+React Life Cycle
+
+When react is rendering all procedure happen in two phase
+
+1.Render  =>in the reneder phase constructor is called and reder method is  called
+ after this render we are ready to put things in dom
+2.Commit  =>after that react update his DOM and after updating dom react called componentDidMount is called
+
+when there are more childs react batches up things all render method of all child in render phase why=> becaue if 1st child is making an fetch aAPI theb=n it take time so second child rendering process get delay
+
+componentDidMount is best place to make API call
+
+2nd reseacrh HW Why I can make componentDIdMound async but ot useEffect
+parent-constructor
+About.js:18 parent-Render
+ProfileClass.js:12 child-constructor
+ProfileClass.js:28 child-renderAnupam from class
+About.js:14 parent-componentDidMount
+ProfileClass.js:19 {login: 'akshaymarch7', id: 12824231, node_id: 'MDQ6VXNlcjEyODI0MjMx', avatar_url: 'https://avatars.githubusercontent.com/u/12824231?v=4', gravatar_id: '', …}
+ProfileClass.js:23 child-component did mount
+ProfileClass.js:28 child-renderAnupam from class
+
+1st child-renderAnupam from class
+2 nd  child-renderAnupam from class this will call again when setState is change and reconciallation is called 
+
+this re render cycle is known as updating
+
+/*
+ * Parent Constructor
+ * parent render
+ * child constructor
+ * child render
+ * 
+ * DOM is update
+ * json is logged in console
+ * 
+ * parent component did mount
+ */
+
+componentDidMount is get called aftert initial render
+componentDidUpdate is get called after every rendering
+
+componentWillUnmount is get called when we go to another page 
+it is called when we are leaving component
+
+disclaimers => never ever compair react life cycle with functional componnet
+
+when you are creating amess we need to remove that also in componentwillUnmount
+
+
+1.What is Order of React Life Cycle Method
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+In React, Class Based Components follow a specific lifecycle during their existence. Here's the order of the lifecycle method calls:
+
+A.Mounting Phase:
+
+a.constructor(): This is the first method called during the creation of an instance of the component. It is used for initializing state and binding event handlers.
+
+b.static getDerivedStateFromProps(): This is invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to indicate that the new props do not require any state updates.
+
+c.render(): This is the only required method in a class component. It examines this.props and this.state and returns a single React element.
+
+d.componentDidMount(): This method is called after the component is mounted (inserted into the DOM tree). It is commonly used for performing tasks that require interaction with the browser, such as fetching data from an API.
+
+B.Updating Phase:
+
+a.static getDerivedStateFromProps(): This method is invoked as part of the updating process. It behaves similarly to the one in the mounting phase.
+
+b.shouldComponentUpdate(): This is invoked before rendering when new props or state are being received. It allows you to specify whether the component should re-render or not. By default, it returns true.
+
+c.render(): Re-rendering is triggered if shouldComponentUpdate returns true.
+
+d.getSnapshotBeforeUpdate(): This method is called right before the changes from the virtual DOM are to be reflected in the DOM. It allows the component to capture some information from the DOM before it is potentially changed.
+
+e.componentDidUpdate(): This method is called after the component is updated in the DOM. It is often used to perform side effects such as network requests or DOM manipulations.
+
+C.Unmounting Phase:
+
+a.componentWillUnmount(): This method is invoked immediately before a component is unmounted and destroyed. It is used to perform cleanup tasks such as canceling network requests, removing event listeners, etc.
+
+D.Error Handling Phase:
+
+a.static getDerivedStateFromError(): This method is called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+
+b.componentDidCatch(): This method is called after an error has been thrown by a descendant component. It receives two parameters: error and info. It is used for logging error information.
+	
+	These methods provide hooks into the lifecycle of a component, allowing developers to execute code at specific points in a component's life. However, with the introduction of React Hooks, many of these methods are being replaced by more flexible and composable alternatives.
+
+In my words
+
+React Life Cycle occur in two phases 1.Rendering 2.Commit
+ and this two phases are occur in three steps
+1.Mounting 2.Updating 3.UnMounting
+
+So basically when we render any component=> a. It calls the constructor of that component
+					    b. after that it call Render method of that component
+	Rendering Phase			    c. after this render we are ready to put the things in DOM
+		
+	Commit Phase			    a. after that react update his DOM 
+	 				    b. after updating the DOM react called componentDidMount
+
+	componentDidMount is best place to make API call
+	componentDidMount is get called aftert initial render
+	componentDidUpdate is get called after every rendering
+	componentWillUnmount is get called when we go to another page it is called when we are leaving component
+
+1.Render  =>in the reneder phase constructor is called and reder method is  called
+ after this render we are ready to put things in dom
+2.Commit  =>after that react update his DOM and after updating dom react called componentDidMount is called
+
+when there are more childs react batches up things all render method of all child in render phase why=> becaue if 1st child is making an fetch aAPI theb=n it take time so second child rendering process get delay
+
+componentDidMount is best place to make API call
+
+
+2.Why do we use componentDidMount?
+
+	componentDidMount() is a lifecycle method in React Class Components that is invoked immediately after a component is mounted (i.e., inserted into the DOM tree). There are several reasons why componentDidMount() is commonly used:
+
+a.Initialization: It's often used for initializing state, fetching data from an API, or performing any setup that requires interaction with the browser environment. Since componentDidMount() is called only once after the initial render, it's a suitable place for tasks that should happen after the component has been rendered for the first time.
+
+b.Side Effects: It's the preferred place to perform side effects in React components. This includes tasks like fetching data, setting up subscriptions, or manually changing the DOM. Performing these tasks in componentDidMount() ensures they occur after the component has been fully rendered, avoiding any issues related to accessing DOM elements that haven't yet been created.
+
+c.Asynchronous Operations: If you need to perform asynchronous operations (e.g., fetching data from an API), componentDidMount() is a suitable lifecycle method. You can initiate these operations here, and once they complete, you can update the component's state accordingly, triggering a re-render if necessary.
+
+d.Integration with Third-party Libraries: If you're integrating React with third-party libraries or need to interact with the browser environment directly, componentDidMount() provides a safe and convenient place to do so. This ensures that initialization and setup occur at the appropriate time in the component's lifecycle.
+
+	Overall, componentDidMount() is essential for tasks that require interaction with the DOM or external data sources after the initial render of a component. It helps ensure that these tasks are performed correctly and at the right time in the component's lifecycle.
+
+
+3.Why do we use componentWillUnmount? Show with example
+	
+	componentWillUnmount() is a lifecycle method in React Class Components that is invoked immediately before a component is unmounted and destroyed. It's commonly used for cleanup tasks that need to be performed before a component is removed from the DOM. Here's an example to illustrate its usage:
+
+	However, it's important to clean up this timer when the component is unmounted to prevent memory leaks and potential issues with stale data. That's where componentWillUnmount() comes in. Before the component is removed from the DOM, componentWillUnmount() is called, and we use it to clear the interval with clearInterval().
+
+	By cleaning up resources in componentWillUnmount(), we ensure that our application behaves correctly and efficiently, especially in scenarios where components are frequently mounted and unmounted, such as in dynamic lists or single-page applications.
+
+4.Why ComponentDidMount is best place to make API calls
+
+componentDidMount() is often considered the best place to make API calls in React components for several reasons:
+
+a.Timing: componentDidMount() is called after the component has been rendered to the DOM for the first time. This ensures that the component is fully mounted and available in the DOM hierarchy, making it a suitable time to fetch external data.
+
+b.Avoiding Render Blocking: Performing API calls in componentDidMount() ensures that they don't block the initial rendering of the component. This helps maintain a smooth user experience, as the UI remains responsive while waiting for data to arrive.
+
+c.Preventing Redundant Calls: Placing API calls in componentDidMount() ensures that they are only made once, after the initial render. This prevents redundant API requests when the component re-renders due to state or prop changes.
+
+d.Separation of Concerns: Separating data fetching logic from rendering logic improves the maintainability and readability of your components. componentDidMount() serves as a clear entry point for initiating data fetching operations, keeping your component's render method focused on UI rendering.
+
+e.Error Handling: componentDidMount() allows you to implement error handling for API calls. You can use try-catch blocks or .catch() methods on promises to handle errors gracefully and update the component's state accordingly.
+
+f.State Management: Once the data is fetched, you can update the component's state with the received data. Updating state triggers a re-render, allowing your component to reflect the fetched data in the UI.
+
+
+
+
+
+
+

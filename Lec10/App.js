@@ -1,5 +1,5 @@
 import React from "react"
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import About from "./src/components/About";
 import Contact from "./src/components/Contact";
