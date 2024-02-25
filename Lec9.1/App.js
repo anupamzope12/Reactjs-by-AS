@@ -1,13 +1,14 @@
 import React from "react"
-import ReactDOM from 'react-dom/client';
-import Header from "./src/components/Header";
-import Body from "./src/components/Body";
-import Footer from "./src/components/Footer";
-import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import ReactDOM from 'react-dom';
+import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaruntMenu";
+import Body from "./src/components/Body";
+import Header from "./src/components/Header";
+import Footer from "./src/components/Footer";
+
 const AppLayout = ()=>{
     return(
         <div>
@@ -17,7 +18,7 @@ const AppLayout = ()=>{
         </div>
     )
 }
-const appRouter =createBrowserRouter([
+const appRouter = createBrowserRouter([
     {
         path:"/",
         element:<AppLayout/>, 
@@ -37,10 +38,9 @@ const appRouter =createBrowserRouter([
                 element:<Contact/> ,
             }, 
             {
-                path: "retaurant/:id",
-                element: <RestaurantMenu />,
-            },
-            
+                path:"/restaurant/:id",
+                element:<RestaurantMenu/>
+            }
         ]
     },
     {
@@ -48,5 +48,6 @@ const appRouter =createBrowserRouter([
         element:<About/> ,
     } 
 ])
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>)

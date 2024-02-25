@@ -3,50 +3,53 @@ import ReactDOM from 'react-dom/client';
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 import Footer from "./src/components/Footer";
-import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import { Outlet, createBrowserRouter,RouterProvider } from "react-router-dom";
 import About from "./src/components/About";
 import Contact from "./src/components/Contact";
-import Error from "./src/components/Error";
-import RestaurantMenu from "./src/components/RestaruntMenu";
+import RestaurantMenu from "./src/components/RestarantMenu";
+
 const AppLayout = ()=>{
     return(
         <div>
             <Header/>
-            <Outlet/>
+           {
+            <Outlet></Outlet>
+           }
             <Footer/>
         </div>
     )
 }
-const appRouter =createBrowserRouter([
+
+const appRouter=createBrowserRouter([
     {
         path:"/",
-        element:<AppLayout/>, 
+        element:<AppLayout/>,
         errorElement:<Error/>,
-        children: [
+        children:[
             {
                 path:"/",
-                element:<Body/> ,
+                element:<Body></Body>
             },
-
             {
                 path:"/about",
-                element:<About/> ,
+                element:<About/>
             },
             {
                 path:"/contact",
-                element:<Contact/> ,
-            }, 
-            {
-                path: "retaurant/:id",
-                element: <RestaurantMenu />,
+                element:<Contact/>
             },
-            
+            {
+                path:"/restaurant/:id",
+                element:<RestaurantMenu/>
+            }            
         ]
     },
     {
         path:"/about",
         element:<About/> ,
     } 
+
 ])
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>)
+root.render(<RouterProvider router={appRouter}/>) // to render functional component

@@ -7,7 +7,7 @@ if I dont not give a symbol of empty array then my use effect is not depend on a
 react says do not create component inside component you can call it inside 
 
 never ever write a useState inside a if Condition
-also nerver write is inside a forLoop
+also nerver write useState inside a forLoop
 never ever write a hook outside a functional component
 
 HW
@@ -20,7 +20,7 @@ react router dom
 
 npm i react-router-dom
 
-create browser router is a function that will get from react rputer dom
+create browser router is a function that will get from react router dom
 
 Router Provider is a component which is coming from react router dom
 
@@ -30,7 +30,7 @@ we can catch this error and useRouterError hook give us acces to this error
 what is disadvanatges of anchor tag
 
 
-//SPA =>with SPA application our applicationour page does not load
+//SPA =>with SPA application our application our page does not load
 // two types of routing 1.client side routing  2. server side routing
 
 server side routing is away that all pages comeds from server
@@ -40,6 +40,7 @@ client side rounting we wiil do client side routing =>means that we dont wnat to
 Link component fro react router dom who develop ythis remix
 instead of anchor tag we use link but if you inspect it is also anchor that
 At the end of day Link uses anchor tag
+
 
 nested routing
 All the childern go into the outlet ccourding to the outlet
@@ -53,3 +54,306 @@ dynamic routing=>
 useParams
 
 Object.values
+
+
+ https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=647335
+
+
+      "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=229" +
+========================================================================================================================================================================================================================================================================================================================
+
+
+1.What is CDN
+
+	A Content Delivery Network (CDN) is a network of distributed servers strategically placed in multiple locations around the world. The primary purpose of a CDN is to deliver content to users more efficiently and reliably, by reducing the physical distance between the server and the user.
+
+Here's how a CDN works:
+
+a.Content Distribution: When a user requests content, such as a web page, image, video, or any other type of file, the CDN automatically determines the nearest server (also known as an edge server or point of presence) to the user's location.
+
+b.Server Selection: The CDN uses various algorithms to select the optimal server based on factors like geographic location, server load, network latency, and current traffic conditions.
+
+c.Content Delivery: The selected server delivers the content to the user's device. By serving content from a server closer to the user, CDNs reduce latency and improve loading times, resulting in a faster and smoother user experience.
+
+d.Caching: CDNs cache frequently accessed content at edge servers. This means that once a piece of content is requested, it's stored temporarily at the edge server closest to the user. Subsequent requests for the same content can then be served directly from the cache, reducing the load on origin servers and further improving performance.
+
+e.Load Balancing: CDNs often employ load balancing techniques to distribute incoming requests across multiple servers, ensuring optimal performance and scalability, even during periods of high traffic.
+
+f.Security: Many CDNs offer security features such as DDoS protection, SSL/TLS encryption, and web application firewalls to protect content and applications from cyber threats.
+
+	Overall, CDNs play a crucial role in optimizing content delivery on the internet, improving performance, reliability, and security for websites, web applications, and digital content distribution.
+
+
+2.Why CDN is greate place to store your images
+
+A Content Delivery Network (CDN) is a great place to store your images for several reasons:
+
+a.Faster Loading Times: CDNs have servers distributed across various geographic locations. When a user requests an image, the CDN delivers it from the server closest to the user, reducing latency and speeding up loading times.
+
+b.Scalability: CDNs are designed to handle large volumes of traffic efficiently. They can scale up to meet increased demand without impacting performance.
+
+c.Reliability: CDNs offer high availability and redundancy. If one server fails, requests can be routed to alternative servers, ensuring uninterrupted access to your images.
+
+d.Cost-Effectiveness: CDNs typically offer pricing models based on usage, which can be more cost-effective than hosting images on your own servers, especially for websites with high traffic or global audiences.
+
+e.Security: Many CDNs provide security features such as DDoS protection, SSL/TLS encryption, and access controls, helping to protect your images from unauthorized access or attacks.
+
+f.Caching: CDNs cache content at edge servers, reducing the load on origin servers and improving performance for subsequent requests.
+
+g.Analytics: CDNs often provide analytics and reporting tools that give insights into image usage, traffic patterns, and performance metrics, allowing you to optimize your content delivery strategy.
+
+	Overall, leveraging a CDN for image storage can improve the performance, reliability, and security of your website or application while potentially reducing costs and simplifying management.
+
+
+3.What is eact-router-dom
+
+	react-router-dom is a popular routing library for React applications, particularly those built with React for web development. It's a package that provides routing capabilities, enabling developers to create single-page applications (SPAs) with multiple views or pages.
+
+Here's a breakdown of what react-router-dom does:
+
+a.Declarative Routing: With react-router-dom, you can define routes in a declarative way using components like BrowserRouter, Route, Switch, and Link.
+
+b.Client-Side Routing: react-router-dom enables client-side routing, which means that navigation between different views or pages of the application happens without full page reloads. This results in a faster and smoother user experience, similar to what users expect from traditional multi-page applications.
+
+c.Nested Routing: It supports nested routing, allowing you to define routes within other routes, which is useful for building complex applications with nested UI structures.
+
+d.Route Parameters: You can define dynamic routes with parameters using the Route component, allowing you to access parameters from the URL in your components.
+
+e.Navigation: react-router-dom provides components like Link and NavLink to create navigation links within your application. These components automatically handle URL updates and navigation state changes.
+
+f.History Management: It includes a history object that allows you to programmatically navigate, go back, or forward in the browser history.
+
+g.Location Tracking: You can access the current location (URL) of the application using hooks like useLocation, allowing you to conditionally render components based on the current URL.
+
+	Overall, react-router-dom simplifies the process of implementing routing in React applications, making it easier to create dynamic and interactive user interfaces with multiple views or pages.
+
+
+4.react-router-dom is library or pacakage
+
+	react-router-dom is a package, but it contains a library of components and utilities for routing in React applications. So, it's both a package and a library. When developers refer to using react-router-dom, they are typically talking about installing and importing the package into their project to leverage its routing capabilities through its provided components and utilities.
+
+5.What is difference between packages and library
+
+The terms "package" and "library" are often used interchangeably, but they have slightly different meanings in the context of software development:
+
+A.Library:
+
+1.A library is a collection of precompiled routines, functions, classes, or modules that can be reused by multiple programs or projects.
+2.Libraries typically contain code that performs specific tasks or provides certain functionalities, such as data manipulation, input/output operations, mathematical computations, etc.
+3.Libraries are often distributed as compiled binaries or source code that developers can include in their projects.
+
+Examples of libraries include standard libraries like the C Standard Library, Python Standard Library, or external libraries like NumPy for numerical computing in Python.
+
+B.Package:
+
+1.A package is a collection of related files and resources bundled together for distribution and installation.
+2.Packages can contain libraries, executables, configuration files, documentation, and other files needed to use or run the software.
+3.Packages often include metadata such as version numbers, dependencies, and licensing information to facilitate installation and management.
+4.Packages can be distributed in various formats, such as compressed archives (e.g., .zip, .tar.gz) or package management formats (e.g., .deb, .rpm, npm, pip).
+
+Examples of packages include npm packages for Node.js, PyPI packages for Python, or NuGet packages for .NET.
+
+	In summary, a library provides reusable code or functionality, while a package is a distribution format that may contain one or more libraries along with other resources needed for software distribution and installation. The term "package" can sometimes be used more broadly to refer to both libraries and other software distributions.
+
+
+6.What is createBrowserRouter in ReactJs
+
+https://reactrouter.com/en/main/routers/create-browser-router
+
+create browser router is a function that will get from react router dom
+
+This is the recommended router for all React Router web projects. It uses the DOM History API to update the URL and manage the history stack.
+
+
+7.What is Router in reactJs
+
+	<Router> is the low-level interface that is shared by all router components (like <BrowserRouter> and <StaticRouter>). In terms of React, <Router> is a context provider that supplies routing information to the rest of the app.
+
+8.What is useRouterError
+
+	useRouterError => is a library that provide us error from react-router-dom we can catch this error and useRouterError hook give us acces to this error
+
+	Inside of an errorElement, this hook returns anything thrown during an action, loader, or rendering. Note that thrown responses have special treatment, see isRouteErrorResponse for more information.
+
+
+8.What is Single Page Application 
+
+	A Single Page Application (SPA) in ReactJS is a web application that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. ReactJS is particularly well-suited for building SPAs due to its component-based architecture and efficient virtual DOM rendering.
+
+Here's how a typical SPA built with ReactJS works:
+
+a.Initial Page Load: When a user visits the application, the server sends a single HTML file, typically containing the basic structure of the application and the JavaScript code necessary to bootstrap the React application.
+
+b.Client-Side Rendering: Once loaded, the React application takes over the rendering process. Instead of navigating to new URLs by fetching entire HTML pages from the server, React handles routing and rendering of different views within the same page based on the URL using components.
+
+c.Dynamic Updates: As the user interacts with the application, such as clicking on links or buttons, React updates the DOM dynamically to reflect those changes. This often involves making requests to a server or fetching data from an API, but the entire page doesn't reload.
+
+d.Virtual DOM: React uses a virtual DOM to efficiently update only the parts of the UI that have changed, rather than re-rendering the entire page. This approach improves performance and provides a smoother user experience.
+
+e.State Management: React offers tools like useState and useContext hooks, as well as state management libraries like Redux or MobX, to manage application state. This allows SPAs to maintain a consistent state across different views without the need for server-side storage.
+
+f.Routing: React Router is a popular library used for handling client-side routing in React applications. It allows developers to define routes and map them to specific components, enabling navigation between different views within the SPA without a full page reload.
+
+	Overall, SPAs built with ReactJS provide a more fluid and responsive user experience compared to traditional multi-page applications, as they avoid the delays associated with full page reloads and offer a more seamless interaction flow.
+
+
+9.What is difference between client side and server side rendering
+
+Client-side rendering (CSR) and server-side rendering (SSR) are two different approaches to rendering web pages in web applications. Here's a breakdown of the differences between the two:
+
+A.Client-Side Rendering (CSR):
+
+a.In CSR, the initial HTML content is minimal and typically consists of a basic shell, often referred to as a "skeleton" or "loading" page.
+b.The browser downloads the JavaScript bundle, which contains the application logic written in frameworks like React, Angular, or Vue.js.
+c.Once the JavaScript bundle is downloaded and executed, the client-side framework takes over and renders the complete UI in the browser.
+d.Subsequent interactions, such as navigating between pages or updating content, are handled entirely on the client side without requiring additional requests to the 
+  server.
+	
+	CSR is well-suited for building highly interactive and dynamic web applications, as it provides a fast and responsive user experience after the initial page load.
+
+Client Side Routing
+	
+	React Router enables "client side routing".
+
+	In traditional websites, the browser requests a document from a web server, downloads and evaluates CSS and JavaScript assets, and renders the HTML sent from the server. When the user clicks a link, it starts the process all over again for a new page.
+
+	Client side routing allows your app to update the URL from a link click without making another request for another document from the server. Instead, your app can immediately render some new UI and make data requests with fetch to update the page with new information.
+
+	This enables faster user experiences because the browser doesn't need to request an entirely new document or re-evaluate CSS and JavaScript assets for the next page. It also enables more dynamic user experiences with things like animation.
+
+
+B.Server-Side Rendering (SSR):
+
+a.In SSR, the server generates the complete HTML content for each page on the server side and sends it to the client's browser.
+b.When a user requests a page, the server fetches the necessary data, renders the page with the appropriate content, and returns the fully rendered HTML to the browser.
+c.The browser receives the pre-rendered HTML content and can immediately display it to the user, even before downloading and executing any client-side JavaScript code.
+d.Once the initial HTML content is rendered, the client-side JavaScript bundle is downloaded and executed, allowing for further interactivity and dynamic updates.
+e.SSR is beneficial for improving perceived page load times, optimizing search engine optimization (SEO), and providing a better experience for users on slower devices or       
+  networks.
+
+	In summary, the main difference between CSR and SSR lies in where the rendering process takes place: on the client side (in the browser) for CSR and on the server side for SSR. Each approach has its advantages and use cases, and many modern web applications combine elements of both CSR and SSR to achieve the best balance of performance, interactivity, and SEO.
+
+10.What is nested routing
+
+Nested Routes
+	Nested Routing is the general idea of coupling segments of the URL to component hierarchy and data. React Router's nested routes were inspired by the routing system in Ember.js circa 2014. The Ember team realized that in nearly every case, segments of the URL determine:
+
+* The layouts to render on the page
+* The data dependencies of those layouts
+
+React Router embraces this convention with APIs for creating nested layouts coupled to URL segments and data.
+
+
+11.What is Link Componednt in react router dom
+
+	In React Router, a Link component is used for declarative, accessible navigation around your application. It provides a way to create links between different routes in your application without triggering a full page refresh.
+
+	When a user clicks on a Link component, the router intercepts the navigation and updates the URL in the browser without reloading the page. This provides a smoother user experience akin to a single-page application.
+
+	The Link component takes a to prop, which specifies the path to navigate to when the link is clicked. It renders an anchor (<a>) tag under the hood, but prevents the default behavior of anchor tags (full page refresh) and delegates the navigation to the React Router.
+
+12.What is outlet component in react router dom
+
+	An <Outlet> should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
+
+	In React Router, the Outlet component is used in conjunction with the Route component to define the location where child routes should be rendered within a parent route component. It is primarily used in nested routing scenarios.
+
+when I click on about and contact and Home page it gone into the outlet
+outlet is get filled what you passed to it
+what is outlet=>named export component
+
+13.What is useParams hook in react router dom
+
+	In React Router, the useParams hook is used to access the parameters of the current route. It allows you to extract parameters from the URL and use them within your components.
+
+	The useParams hook returns an object containing key-value pairs where the keys are the parameter names specified in the route path and the values are the corresponding parameter values extracted from the URL. In this case, we're only interested in accessing the id parameter.
+
+
+14.What is Object.values in javaScript
+
+
+Object.values() is a built-in method in JavaScript introduced in ECMAScript 2017 (ES8). It is used to extract the values of an object's properties and returns them as an array.
+
+Here's a basic example of how Object.values() works:
+
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+const values = Object.values(person);
+
+console.log(values); // Output: ['John', 30, 'New York']
+
+* We have an object called person with three properties: name, age, and city.
+* When we use Object.values(person), it returns an array containing the values of the person object's properties. So, ['John', 30, 'New York'] is returned.
+* The order of the values in the resulting array corresponds to the order of properties in the object. However, the JavaScript specification does not guarantee any specific order for object properties, so the order of values might not always match the order of properties in the code.
+	
+	Object.values() provides a convenient way to access and manipulate an object's values, especially when you need to iterate over them or perform operations on them collectively.
+
+15.Array.fill() in javaScript
+
+In JavaScript, the Array.fill() method is used to fill all the elements of an array with a specified value. This method changes the original array and returns the modified array.
+
+Here's the basic syntax of Array.fill():
+
+array.fill(value, start, end);
+
+1.value: The value to fill the array with.
+2.start (optional): The index to start filling the array. If not specified, the default is 0.
+3.end (optional): The index to stop filling the array (exclusive). If not specified, the default is array.length.
+
+Here's an example to demonstrate how Array.fill() works:
+
+const array = [1, 2, 3, 4, 5];
+
+// Fill the entire array with the value 0
+array.fill(0);
+console.log(array); // Output: [0, 0, 0, 0, 0]
+
+// Fill a portion of the array with the value 9 starting from index 2 (inclusive) to index 4 (exclusive)
+array.fill(9, 2, 4);
+console.log(array); // Output: [0, 0, 9, 9, 0]
+
+In this example:
+
+1.First, we fill the entire array with the value 0.
+2.Then, we fill a portion of the array with the value 9, starting from index 2 (inclusive) to index 4 (exclusive).
+
+	Array.fill() is commonly used when you want to initialize an array with default values, reset all elements to a specific value, or fill a portion of an array with a specific value.
+
+16.Array(10).fill("") in javaScript
+
+
+The code Array(10).fill("") creates a new array with a length of 10 and fills all the elements with an empty string "".
+
+Here's what happens:
+
+* Array(10) creates a new array with a length of 10. However, since no values are provided, the elements of the array will be undefined.
+* .fill("") then fills all the elements of this array with the empty string "".
+
+So, after executing Array(10).fill(""), you'll get an array with 10 elements, each containing an empty string "".
+
+// Resulting array:
+["", "", "", "", "", "", "", "", "", ""]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
