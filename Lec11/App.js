@@ -11,7 +11,6 @@ import Profile from "./src/components/Profile";
 import Shimmer from "./src/components/Shimmer";
 // import Inst amart from "./src/components/Instamart";
 
-
 //chunk9ing
 //dynamic bundling
 //lazy loading

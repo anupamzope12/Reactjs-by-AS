@@ -1,3 +1,184 @@
 Day 11 Notes
 
 How to create a custom hooks
+
+why reusability readability separation of concern modularity 
+it makes our code maintainalbe  because it is easy to debug
+
+modularity=> we have broken our code into simple pieces
+
+how would I know weather I am online or offline
+
+Window.online event
+
+when ever we add any addevent listener we need to remove it by passing the same function
+
+//chunk9ing
+//dynamic bundling
+//lazy loading 
+//code splitting
+//on demand loading
+//Dynamic import
+
+//when ever you are trying to load the coponent in demand react trying to suspend it
+
+when you load dynamicalaly on demand => react will suspend the loading bc it takes time to render
+
+solution suspens=> it is like promise it will wait untill it load
+
+when there is a suspense react take a prop known as fallback
+
+
+							   Always Lazyload on top not with in the component
+
+===========================================================================================================================================================================
+===========================================================================================================================================================================
+
+1.Why we use custom hooks in our app
+
+	why reusability, readability, separation of concern, modularity, it makes our code maintainable because it is easy to debug
+
+	modularity=> we have broken our code into simple pieces
+2.How check weather you are offline or not in javaScript
+
+	use Window.addEventListner
+
+window.addEventListener('online', function() {
+    console.log('You are online.');
+});
+
+window.addEventListener('offline', function() {
+    console.log('You are offline.');
+});
+
+3.When and why do we need lazy()? in reactJs
+
+							       Always Lazyload on top not with in the component
+
+
+	In React, the lazy() function is used to dynamically load a component only when it's needed, typically to improve the initial loading time of the application by splitting the code into smaller chunks. It allows you to implement code splitting, where different parts of your application can be loaded separately, rather than bundling everything into a single large file.
+
+Here's when and why you might use lazy() in React:
+
+a.Code Splitting: When your application grows in size, bundling all of the code into a single file can lead to longer initial load times. By using lazy() along with dynamic import, you can split your code into smaller chunks and load them on-demand, improving the initial load performance.
+
+b.Reducing Initial Load Time: Lazy loading components means that components are only loaded when they are needed, rather than upfront when the application is loaded. This can significantly reduce the initial load time of your application, as only the essential parts are loaded initially.
+
+c.Improved User Experience: By reducing the initial load time, you can provide a better user experience, especially for users on slower networks or devices. Users will see the essential parts of the application more quickly, and non-essential parts can be loaded in the background as needed.
+
+Here's a basic example of how you can use lazy() in React:
+
+import React, { lazy, Suspense } from 'react';
+
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+
+	In this example, LazyComponent is loaded lazily using lazy() and import(). The Suspense component is used to specify a fallback UI to show while the lazy-loaded component is being loaded. When LazyComponent is needed (i.e., when it's about to be rendered), React will load it asynchronously, and the fallback UI will be shown until it's loaded.
+
+4.What is Suspense in reactJs?
+
+	Suspense is a component provided by React that allows you to suspend rendering while waiting for some asynchronous operation to resolve, such as data fetching or lazy loading of components. It's primarily used in combination with React's new concurrent mode to enable better handling of asynchronous operations within components.
+
+	The main purpose of Suspense is to improve the user experience by providing a smooth loading experience for components that require asynchronous data or code. Instead of immediately rendering a loading state or placeholder UI while waiting for data or code to be fetched, Suspense allows you to defer rendering until the data or code is ready.
+
+	Suspense works in conjunction with lazy() for lazy loading components and React.lazy() for code splitting, as well as with React's new ErrorBoundary component for error handling.
+
+	Suspense can also be used for data fetching with the React.lazy() method, which enables you to suspend rendering while waiting for data to be fetched asynchronously. When used with data fetching, Suspense allows you to handle loading states more elegantly within your components.
+
+5.Why we got this error: A component was suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix this, updates that suspend should be wrapped with start transition? How does suspense fix this error?
+
+	The error message you've provided typically occurs when a component is suspended while it's in the middle of rendering synchronously, which means it's trying to perform an asynchronous operation during a synchronous phase of the rendering process. React expects components to either render synchronously or to explicitly handle asynchronous behavior with Suspense and startTransition.
+
+	To fix this error, you need to ensure that any asynchronous operations that could lead to suspension are wrapped within a startTransition call. startTransition is a function provided by React that allows you to schedule a transition to a new state asynchronously. By using startTransition, you're indicating to React that the update is not critical for the current rendering cycle and can be deferred to a later time.
+
+6. Advantages and Disadvantages of using this code splitting pattern?
+
+The code splitting pattern in ReactJS, particularly with tools like React.lazy() and Suspense, offers several advantages and has some disadvantages as well.
+
+Advantages:
+
+a.Improved Initial Load Time: Code splitting allows you to load only the essential parts of your application initially, leading to faster initial load times. Users can see and interact with the core features of the application more quickly.
+
+b.Better Performance: By splitting code into smaller chunks and loading them on-demand, you reduce the amount of code that needs to be loaded upfront, which can result in better performance, especially on slower networks or devices.
+
+c.Optimized Bundle Sizes: Code splitting helps in optimizing bundle sizes by breaking down the application into smaller, more manageable chunks. This can lead to smaller bundle sizes, which are faster to download and parse.
+
+d.Improved Developer Experience: Code splitting makes it easier to manage large applications by breaking them into smaller, more modular parts. This can improve the developer experience by making codebases more maintainable and easier to understand.
+
+e.Dynamic Loading: Code splitting allows you to dynamically load components or other resources when they are needed, rather than loading everything upfront. This can result in a more responsive and fluid user experience.
+
+Disadvantages:
+
+a.Complexity: Implementing code splitting using tools like React.lazy() and Suspense adds complexity to the application code. Developers need to understand how and when to split code effectively, which can be challenging, especially for beginners.
+
+b.Potential Overhead: While code splitting can improve performance by reducing initial load times, it can also introduce some overhead due to the additional network requests required to load split chunks. Careful consideration is needed to balance the benefits of code splitting with its potential overhead.
+
+c.Tooling Support: While tools like React.lazy() and Suspense make code splitting easier in ReactJS, not all libraries and tools may fully support this pattern. Compatibility with third-party libraries and tools could be a concern when implementing code splitting.
+
+d.Increased Complexity in State Management: Splitting code can lead to more complex state management, especially if components that rely on shared state are split across different chunks. Careful consideration is needed to manage state effectively in a code-split application.
+
+e.Potential for Loading Indicators: If not implemented carefully, code splitting can lead to situations where components are suspended while responding to synchronous input, resulting in loading indicators being displayed to users. Careful use of Suspense with start transitions is necessary to mitigate this issue.
+
+	In summary, while code splitting can offer significant benefits in terms of improved performance and developer experience, it also comes with some challenges and considerations that need to be addressed to ensure its effective implementation.
+
+7.When do we and why do we need suspense?
+	Suspense in React is primarily used in conjunction with asynchronous operations such as data fetching and lazy loading of components. Here's when and why you might need Suspense:
+
+a.Lazy Loading Components: When you're using lazy loading to dynamically import components in your React application, you can wrap the lazy-loaded component with Suspense. This allows you to specify a fallback UI to display while the component is being loaded asynchronously. This is particularly useful for improving the initial loading performance of your application by only loading components when they're needed.
+
+b.Data Fetching: When fetching data asynchronously, Suspense can be used to suspend rendering until the data fetching operation is complete. This enables you to handle loading states more elegantly within your components. You can use libraries like React Query or SWR along with Suspense to fetch data declaratively and suspend rendering while the data is being fetched.
+
+c.Server-Side Rendering (SSR): In server-side rendering scenarios, where data fetching might be asynchronous, Suspense can be used to suspend rendering on the server side until the data fetching operation is complete. This ensures that the server only sends the fully rendered markup to the client once all asynchronous operations are finished, improving perceived performance.
+
+d.Code-Splitting Optimization: When implementing code splitting to optimize bundle sizes, Suspense can be used to suspend rendering while loading the split chunks asynchronously. This ensures a smoother user experience by displaying a loading indicator while the code chunks are being loaded.
+
+e.Error Boundaries: Suspense can also be combined with React's ErrorBoundary component to catch and handle errors that occur during asynchronous operations. This allows you to gracefully handle errors and display fallback UIs when asynchronous operations fail.
+
+	Overall, Suspense in React provides a way to handle asynchronous operations more elegantly and efficiently, improving both the developer experience and the user experience of your applications.
+
+8. 
+
+//Chunking
+//Dynamic bundling
+//Lazy loading 
+//Code splitting
+//On demand loading
+//Dynamic import
+
+	These terms are closely related and often used interchangeably, especially in the context of front-end development and optimizing web applications for performance. Here's a brief explanation of each term:
+
+a.Chunking: Chunking refers to breaking down the application code into smaller, more manageable "chunks" or bundles. These chunks can then be loaded separately, typically asynchronously, to improve loading times and resource utilization.
+
+b.Dynamic Bundling: Dynamic bundling is a process where the bundling of code is done dynamically at runtime, rather than statically at build time. It allows for more flexible bundling configurations based on runtime conditions or user interactions.
+
+c.Lazy Loading: Lazy loading is a technique where resources (such as JavaScript files or components) are loaded only when they are needed, rather than upfront when the application initially loads. This can help improve initial loading times and reduce unnecessary resource consumption.
+
+d.Code Splitting: Code splitting is a strategy for optimizing the loading of JavaScript code by splitting it into smaller bundles that can be loaded on demand. This can help reduce the initial bundle size and improve performance, especially for larger applications.
+
+e.On-Demand Loading: On-demand loading is a broader concept that encompasses both lazy loading and code splitting. It refers to loading resources only when they are needed, either dynamically at runtime or based on user interactions, rather than loading everything upfront.
+
+f.Dynamic Import: Dynamic import is a JavaScript feature that allows you to import modules asynchronously, using a special import() function. This enables lazy loading and code splitting by allowing you to load modules on demand, at runtime, based on conditions or user interactions.
+
+	In summary, these terms all relate to strategies and techniques for optimizing the loading of resources in web applications, with the goal of improving performance and user experience by loading only what is needed, when it's needed.
+
+
+
+
+
+
+
+
+
+
+

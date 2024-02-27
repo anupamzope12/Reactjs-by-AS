@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {IMG_CDN_URL} from "./Constant"
 import useRestaurant from "../utils/useRestaurant";
+
 const RestaurantMenu = () => {
     const { resId } = useParams();    
   
